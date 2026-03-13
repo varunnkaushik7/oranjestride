@@ -496,15 +496,10 @@
     <div class="contact-grid" style="margin-top: 3.5rem;">
       <div class="contact-info reveal">
         <p style="color:var(--chalk-dim);font-size:0.95rem;line-height:1.75;margin-bottom:1rem;">Whether you're an institution designing a curriculum, a company upskilling teams, or a fund needing analytics depth — we'd love to hear from you.</p>
-        <div class="contact-detail"><div class="contact-icon">📧</div><div><div class="cd-label">Email</div><a href="mailto:contactus@oranjestride.com" class="cd-val">contactus@oranjestride.com</a></div></div>
+        <div class="contact-detail"><div class="contact-icon">📧</div><div><div class="cd-label">Email</div><a href="/cdn-cgi/l/email-protection#f6959998829795828385b6998497989c938582849f9293d895999b" class="cd-val"><span class="__cf_email__" data-cfemail="63000c0d170200171610230c11020d09061017110a07064d000c0e">[email&#160;protected]</span></a></div></div>
         <div class="contact-detail"><div class="contact-icon">📞</div><div><div class="cd-label">Phone</div><a href="tel:+919311790400" class="cd-val">+91 93117 90400</a></div></div>
         <div class="contact-detail"><div class="contact-icon">📍</div><div><div class="cd-label">Location</div><span class="cd-val">Safdarjung Enclave, New Delhi, India</span></div></div>
-        <div style="display:flex;gap:0.8rem;margin-top:0.5rem;">
-          <a href="https://www.linkedin.com/in/oranjestride-consultancy-b5063018a/" class="social-btn" target="_blank">in</a>
-          <a href="https://www.facebook.com/theOranjeStride" class="social-btn" target="_blank">f</a>
-          <a href="https://twitter.com/TheOranjeStride" class="social-btn" target="_blank">𝕏</a>
-          <a href="https://www.instagram.com/oranjestride/" class="social-btn" target="_blank">◎</a>
-        </div>
+
       </div>
       <div class="contact-form reveal reveal-delay-2">
         <div class="form-row">
@@ -525,7 +520,8 @@
           </select>
         </div>
         <div class="form-group"><label class="form-label">Message</label><textarea class="form-textarea" placeholder="Tell us about your goals or requirements..."></textarea></div>
-        <button class="form-submit" id="submitBtn">Send Enquiry →</button>
+        <button class="form-submit" id="submitBtn" type="button">Send Enquiry →</button>
+        <p id="formMsg" style="display:none;font-family:'JetBrains Mono',monospace;font-size:0.75rem;text-align:center;padding:0.5rem;border-radius:3px;"></p>
       </div>
     </div>
   </div>
@@ -533,16 +529,11 @@
 
 <footer>
   <div><div class="footer-brand">Oranje<span>Stride</span></div><div class="footer-tagline">Nothing Is Unattainable</div></div>
-  <div class="footer-social">
-    <a href="https://www.linkedin.com/in/oranjestride-consultancy-b5063018a/" class="social-btn" target="_blank">in</a>
-    <a href="https://www.facebook.com/theOranjeStride" class="social-btn" target="_blank">f</a>
-    <a href="https://twitter.com/TheOranjeStride" class="social-btn" target="_blank">𝕏</a>
-    <a href="https://www.instagram.com/oranjestride/" class="social-btn" target="_blank">◎</a>
-  </div>
+
   <div class="footer-copy">©2025 OranjeStride Consultancy Pvt. Ltd.<br>Safdarjung Enclave, New Delhi</div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Custom cursor
   const cursor = document.getElementById('cursor');
   const ring = document.getElementById('cursorRing');
@@ -614,10 +605,42 @@
     const t = setInterval(()=>{ c+=inc; if(c>=d.val){c=d.val;clearInterval(t);} el.textContent = d.dec?(c/10).toFixed(1):Math.floor(c); }, 18);
   }), 900);
 
-  // Form
-  document.getElementById('submitBtn').addEventListener('click', function() {
-    this.textContent = '✓ Message Sent!'; this.style.background='#1a6b3c';
-    setTimeout(()=>{ this.textContent='Send Enquiry →'; this.style.background='var(--oranje)'; }, 3000);
+  // Form — Formspree integration
+  document.getElementById('submitBtn').addEventListener('click', async function() {
+    const btn = this;
+    const msg = document.getElementById('formMsg');
+    const inputs = document.querySelectorAll('.form-input, .form-select, .form-textarea');
+    const name = inputs[0].value.trim();
+    const org = inputs[1].value.trim();
+    const email = inputs[2].value.trim();
+    const type = inputs[3].value;
+    const message = inputs[4].value.trim();
+    if (!name || !email || !message) {
+      msg.style.display = 'block';
+      msg.style.background = 'rgba(255,80,80,0.1)';
+      msg.style.color = '#ff5050';
+      msg.textContent = '✗ Please fill in Name, Email and Message.';
+      return;
+    }
+    btn.textContent = 'Sending...'; btn.disabled = true; btn.style.opacity = '0.7';
+    try {
+      const res = await fetch('https://formspree.io/f/mjgaovpl', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ name, organisation: org, email, enquiry_type: type, message })
+      });
+      if (res.ok) {
+        btn.textContent = '✓ Message Sent!'; btn.style.background = '#1a6b3c'; btn.style.opacity = '1';
+        msg.style.display = 'block'; msg.style.background = 'rgba(26,107,60,0.15)'; msg.style.color = '#4caf7d';
+        msg.textContent = '✓ Thank you! We will get back to you within 24 hours.';
+        inputs.forEach(i => i.value = '');
+        setTimeout(() => { btn.textContent = 'Send Enquiry →'; btn.style.background = 'var(--oranje)'; btn.disabled = false; }, 5000);
+      } else { throw new Error('Failed'); }
+    } catch(e) {
+      btn.textContent = 'Send Enquiry →'; btn.disabled = false; btn.style.opacity = '1';
+      msg.style.display = 'block'; msg.style.background = 'rgba(255,80,80,0.1)'; msg.style.color = '#ff5050';
+      msg.textContent = '✗ Something went wrong. Please email us at contactus@oranjestride.com';
+    }
   });
 </script>
 </body>
