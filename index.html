@@ -143,16 +143,71 @@
   .testi-stars { position: absolute; top: 2.2rem; right: 2.2rem; color: var(--oranje); font-size: 0.8rem; letter-spacing: 2px; }
 
   #courses { background: var(--ink-2); }
-  .courses-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 3rem; }
+
+  /* Stream tabs */
+  .stream-tabs { display: flex; gap: 0; margin-top: 2.5rem; border: 1px solid var(--chalk-ghost); border-radius: 4px; overflow: hidden; }
+  .stream-tab { flex: 1; padding: 1rem 1.5rem; background: var(--ink); font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--chalk-dim); border: none; cursor: pointer; transition: all 0.3s; text-align: center; border-right: 1px solid var(--chalk-ghost); position: relative; }
+  .stream-tab:last-child { border-right: none; }
+  .stream-tab.active { background: var(--oranje-dim); color: var(--oranje); }
+  .stream-tab::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--oranje); transition: width 0.3s; }
+  .stream-tab.active::after { width: 100%; }
+  .stream-tab:hover:not(.active) { background: var(--ink-3); color: var(--chalk); }
+  .stream-panel { display: none; margin-top: 2.5rem; animation: streamFade 0.4s ease; }
+  .stream-panel.active { display: block; }
+  @keyframes streamFade { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+  .stream-intro { font-size: 0.9rem; color: var(--chalk-dim); line-height: 1.7; max-width: 700px; margin-bottom: 2rem; padding-left: 1rem; border-left: 2px solid var(--oranje); }
+  .courses-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .courses-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
   .course-card { background: var(--ink); border: 1px solid var(--chalk-ghost); padding: 2.2rem; border-radius: 4px; transition: all 0.3s; position: relative; overflow: hidden; }
   .course-card:hover { border-color: var(--oranje); transform: translateY(-3px); }
+  .course-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: linear-gradient(90deg, var(--oranje), var(--electric)); transition: width 0.4s; }
+  .course-card:hover::after { width: 100%; }
   .course-card .tag-hot { position: absolute; top: 1.5rem; right: 1.5rem; background: var(--oranje); color: var(--ink); font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; padding: 0.2rem 0.6rem; border-radius: 2px; }
   .course-icon { font-size: 1.6rem; margin-bottom: 1.2rem; display: block; }
-  .course-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.7rem; }
-  .course-desc { font-size: 0.83rem; color: var(--chalk-dim); line-height: 1.7; }
-  .course-meta { display: flex; gap: 1.5rem; margin-top: 1.5rem; padding-top: 1.2rem; border-top: 1px solid var(--chalk-ghost); }
+  .course-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.7rem; line-height: 1.3; }
+  .course-desc { font-size: 0.82rem; color: var(--chalk-dim); line-height: 1.7; }
+  .course-meta { display: flex; gap: 1.5rem; margin-top: 1.5rem; padding-top: 1.2rem; border-top: 1px solid var(--chalk-ghost); flex-wrap: wrap; }
   .course-meta-item { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--chalk-dim); }
   .course-meta-item strong { color: var(--oranje); display: block; font-size: 0.88rem; }
+  .course-modules { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .course-module-tag { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: var(--electric); background: var(--electric-dim); padding: 0.2rem 0.55rem; border-radius: 2px; letter-spacing: 0.08em; }
+  .uni-tracks { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2.5rem; }
+  .uni-track { background: var(--ink); border: 1px solid var(--chalk-ghost); border-radius: 4px; padding: 2rem; position: relative; overflow: hidden; }
+  .uni-track::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+  .uni-track.ug::before { background: linear-gradient(90deg, var(--oranje), #ffb347); }
+  .uni-track.pg::before { background: linear-gradient(90deg, var(--electric), var(--oranje)); }
+  .track-badge { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.25rem 0.7rem; border-radius: 2px; display: inline-block; margin-bottom: 1rem; }
+  .track-badge.ug { color: var(--oranje); background: var(--oranje-dim); border: 1px solid var(--oranje); }
+  .track-badge.pg { color: var(--electric); background: var(--electric-dim); border: 1px solid var(--electric); }
+  .track-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .track-sub { font-size: 0.78rem; color: var(--chalk-dim); margin-bottom: 1.2rem; }
+  .track-points { display: flex; flex-direction: column; gap: 0.5rem; }
+  .track-point { font-size: 0.8rem; color: var(--chalk-dim); display: flex; gap: 0.6rem; }
+  .track-point::before { content: '→'; color: var(--oranje); flex-shrink: 0; }
+  .cert-badge { display: flex; align-items: center; gap: 0.7rem; margin-top: 1.5rem; padding: 0.8rem 1rem; background: var(--oranje-dim); border: 1px solid var(--oranje); border-radius: 3px; font-size: 0.78rem; color: var(--chalk); }
+  .cert-badge::before { content: '🎓'; font-size: 1rem; }
+  #india-tour { background: var(--ink); position: relative; overflow: hidden; }
+  .tour-glow { position: absolute; top: -20%; left: 50%; transform: translateX(-50%); width: 800px; height: 400px; background: radial-gradient(ellipse, rgba(244,124,32,0.12) 0%, transparent 65%); pointer-events: none; }
+  .tour-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; margin-top: 3rem; }
+  .tour-features { display: flex; flex-direction: column; gap: 1.2rem; }
+  .tour-feature { display: flex; align-items: flex-start; gap: 1rem; padding: 1.2rem 1.5rem; background: var(--ink-2); border: 1px solid var(--chalk-ghost); border-radius: 3px; transition: border-color 0.3s; }
+  .tour-feature:hover { border-color: var(--oranje); }
+  .tf-icon { font-size: 1.3rem; flex-shrink: 0; }
+  .tf-title { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.25rem; }
+  .tf-desc { font-size: 0.8rem; color: var(--chalk-dim); line-height: 1.6; }
+  .tour-panel { background: var(--ink-2); border: 1px solid var(--chalk-ghost); border-radius: 4px; padding: 2.5rem; position: relative; overflow: hidden; }
+  .tour-panel::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--oranje), var(--electric)); }
+  .tour-audience-title { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.2em; color: var(--electric); margin-bottom: 1rem; }
+  .audience-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
+  .audience-pill { font-size: 0.78rem; color: var(--chalk); background: var(--chalk-ghost); padding: 0.35rem 0.8rem; border-radius: 2px; border: 1px solid var(--chalk-ghost); }
+  .tour-cert { background: var(--ink); border: 1px solid var(--oranje); border-radius: 3px; padding: 1.2rem 1.5rem; margin-bottom: 1.5rem; }
+  .tour-cert-title { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--oranje); margin-bottom: 0.5rem; }
+  .tour-cert-text { font-size: 0.85rem; color: var(--chalk); line-height: 1.6; }
+  .tour-durations { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; }
+  .dur-item { background: var(--ink); border: 1px solid var(--chalk-ghost); border-radius: 3px; padding: 0.8rem; text-align: center; transition: border-color 0.3s; }
+  .dur-item:hover { border-color: var(--oranje); }
+  .dur-val { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; color: var(--oranje); display: block; line-height: 1; }
+  .dur-lbl { font-size: 0.68rem; color: var(--chalk-dim); margin-top: 0.3rem; display: block; font-weight: 600; letter-spacing: 0.08em; }
 
   #consulting { background: var(--ink); position: relative; overflow: hidden; }
   .consulting-bg { position: absolute; top: -40%; right: -20%; width: 600px; height: 600px; background: radial-gradient(circle, var(--oranje-glow) 0%, transparent 65%); pointer-events: none; }
@@ -224,7 +279,10 @@
     .about-grid, .consulting-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
     .stat-card { border-right: none; border-bottom: 1px solid var(--chalk-ghost); }
-    .expertise-grid, .testi-grid, .courses-grid { grid-template-columns: 1fr; }
+    .expertise-grid, .testi-grid, .courses-grid, .courses-grid-3, .uni-tracks, .tour-grid { grid-template-columns: 1fr; }
+    .stream-tabs { flex-direction: column; }
+    .stream-tab { border-right: none; border-bottom: 1px solid var(--chalk-ghost); }
+    .tour-durations { grid-template-columns: repeat(3,1fr); }
     .clients-split { grid-template-columns: 1fr; }
     .form-row { grid-template-columns: 1fr; }
     footer { flex-direction: column; gap: 1.5rem; text-align: center; }
@@ -244,7 +302,8 @@
     <a href="#about">About</a>
     <a href="#expertise">Expertise</a>
     <a href="#clients">Clients</a>
-    <a href="#courses">Courses</a>
+    <a href="#courses">Programmes</a>
+    <a href="#india-tour">India Tour</a>
     <a href="#consulting">Consulting</a>
     <a href="#contact" class="nav-cta">Get In Touch</a>
   </div>
@@ -286,32 +345,36 @@
   <div class="ticker-track">
     <span class="ticker-item">IIM Visakhapatnam <span class="sep">✦</span></span>
     <span class="ticker-item">IIM Sambalpur <span class="sep">✦</span></span>
+    <span class="ticker-item">Great Learning <span class="sep">✦</span></span>
     <span class="ticker-item">EY <span class="sep">✦</span></span>
     <span class="ticker-item">Hexaware <span class="sep">✦</span></span>
     <span class="ticker-item">Havells <span class="sep">✦</span></span>
     <span class="ticker-item">Colt Technology <span class="sep">✦</span></span>
     <span class="ticker-item">NIIT <span class="sep">✦</span></span>
     <span class="ticker-item">Imarticus <span class="sep">✦</span></span>
+    <span class="ticker-item">IMS Proschool <span class="sep">✦</span></span>
     <span class="ticker-item">Christ University <span class="sep">✦</span></span>
     <span class="ticker-item">ISBF <span class="sep">✦</span></span>
     <span class="ticker-item">AJNIFM <span class="sep">✦</span></span>
     <span class="ticker-item">Room to Read <span class="sep">✦</span></span>
     <span class="ticker-item">Bennett &amp; Coleman <span class="sep">✦</span></span>
-    <span class="ticker-item">Citizens Bank Nepal <span class="sep">✦</span></span>
+    <span class="ticker-item">EduEdgePro <span class="sep">✦</span></span>
     <span class="ticker-item">IIM Visakhapatnam <span class="sep">✦</span></span>
     <span class="ticker-item">IIM Sambalpur <span class="sep">✦</span></span>
+    <span class="ticker-item">Great Learning <span class="sep">✦</span></span>
     <span class="ticker-item">EY <span class="sep">✦</span></span>
     <span class="ticker-item">Hexaware <span class="sep">✦</span></span>
     <span class="ticker-item">Havells <span class="sep">✦</span></span>
     <span class="ticker-item">Colt Technology <span class="sep">✦</span></span>
     <span class="ticker-item">NIIT <span class="sep">✦</span></span>
     <span class="ticker-item">Imarticus <span class="sep">✦</span></span>
+    <span class="ticker-item">IMS Proschool <span class="sep">✦</span></span>
     <span class="ticker-item">Christ University <span class="sep">✦</span></span>
     <span class="ticker-item">ISBF <span class="sep">✦</span></span>
     <span class="ticker-item">AJNIFM <span class="sep">✦</span></span>
     <span class="ticker-item">Room to Read <span class="sep">✦</span></span>
     <span class="ticker-item">Bennett &amp; Coleman <span class="sep">✦</span></span>
-    <span class="ticker-item">Citizens Bank Nepal <span class="sep">✦</span></span>
+    <span class="ticker-item">EduEdgePro <span class="sep">✦</span></span>
   </div>
 </div>
 
@@ -388,8 +451,9 @@
           <div class="client-item"><span class="client-name">IIM Sambalpur</span><span class="client-type">Management School</span></div>
           <div class="client-item"><span class="client-name">Christ University</span><span class="client-type">University</span></div>
           <div class="client-item"><span class="client-name">ISBF</span><span class="client-type">Business School</span></div>
-          <div class="client-item"><span class="client-name">NIIT & Imarticus</span><span class="client-type">Enlisted Talent Provider</span></div>
-          <div class="client-item"><span class="client-name">Citizens Bank Nepal</span><span class="client-type">International · Banking</span></div>
+          <div class="client-item"><span class="client-name">Great Learning</span><span class="client-type">Ed-Tech Platform</span></div>
+          <div class="client-item"><span class="client-name">NIIT · Imarticus · IMS Proschool</span><span class="client-type">Training Institutes</span></div>
+          <div class="client-item"><span class="client-name">EduEdgePro</span><span class="client-type">Ed-Tech Platform</span></div>
         </div>
       </div>
       <div class="reveal reveal-delay-2">
@@ -438,13 +502,149 @@
 <section id="courses">
   <div class="section-wrap">
     <div class="section-label reveal">Programmes</div>
-    <h2 class="section-title reveal">What We <span class="oranje">Teach</span></h2>
-    <div class="courses-grid">
-      <div class="course-card reveal"><span class="tag-hot">🔥 High Demand</span><span class="course-icon">🤖</span><div class="course-title">Generative AI & Agentic AI Bootcamp</div><div class="course-desc">Hands-on intensive covering LLMs, prompt engineering, RAG pipelines, and agentic workflows. Designed for managers and executives seeking immediate business impact.</div><div class="course-meta"><div class="course-meta-item"><strong>Live + Async</strong>Format</div><div class="course-meta-item"><strong>Intermediate</strong>Level</div><div class="course-meta-item"><strong>Online / Offline</strong>Mode</div></div></div>
-      <div class="course-card reveal reveal-delay-1"><span class="tag-hot">🌐 Online & Offline</span><span class="course-icon">🧠</span><div class="course-title">Generative AI for Business Leaders</div><div class="course-desc"> Covers GenAI foundations, ML basics, business applications (Finance, Marketing, Ops, Strategy, Telecom), AI ethics & legal considerations, and hands-on Claude, ChatGPT, Co-Pilot prompt strategy. Designed for non-technical leaders who need to make AI-informed decisions.</div><div class="course-meta"><div class="course-meta-item"><strong>Self-Paced</strong>Format</div><div class="course-meta-item"><strong>Beginner → Manager</strong>Level</div><div class="course-meta-item"><strong>Online & Offline</strong>Mode</div></div></div>
-      <div class="course-card reveal reveal-delay-1"><span class="tag-hot">⭐ Flagship</span><span class="course-icon">📊</span><div class="course-title">Business Analytics with Python & R</div><div class="course-desc">From statistical foundations to predictive modeling — the complete analytics toolkit. Includes Tableau/Power BI capstone projects on real financial datasets.</div><div class="course-meta"><div class="course-meta-item"><strong>Instructor-Led</strong>Format</div><div class="course-meta-item"><strong>All Levels</strong>Level</div><div class="course-meta-item"><strong>Blended</strong>Mode</div></div></div>
-      <div class="course-card reveal"><span class="course-icon">🧩</span><div class="course-title">Machine Learning Engineering</div><div class="course-desc">End-to-end ML pipeline — data wrangling, feature engineering, model selection, evaluation, and deployment. Heavy emphasis on production-ready code and MLOps.</div><div class="course-meta"><div class="course-meta-item"><strong>Project-Based</strong>Format</div><div class="course-meta-item"><strong>Intermediate</strong>Level</div><div class="course-meta-item"><strong>Online</strong>Mode</div></div></div>
-      <div class="course-card reveal reveal-delay-1"><span class="tag-hot">🏛 Govt. Certified</span><span class="course-icon">📈</span><div class="course-title">Executive Analytics for Leadership</div><div class="course-desc">Tailored for senior bureaucrats and C-suite. Combines Python/R hands-on workshops with Tableau labs — focused on analytics strategy and roadmap building.</div><div class="course-meta"><div class="course-meta-item"><strong>Workshop Series</strong>Format</div><div class="course-meta-item"><strong>Executive</strong>Level</div><div class="course-meta-item"><strong>On-site / Virtual</strong>Mode</div></div></div>
+    <h2 class="section-title reveal">Our <span class="oranje">Training Streams</span></h2>
+    <p style="color:var(--chalk-dim);font-size:0.95rem;line-height:1.7;max-width:600px" class="reveal">Three distinct streams — each engineered for a different audience, with curriculum depth and delivery format matched precisely to their context.</p>
+
+    <!-- Stream Tabs -->
+    <div class="stream-tabs reveal">
+      <button class="stream-tab active" onclick="switchStream('corporate', this)">🏢 &nbsp;Corporate & Leadership Training</button>
+      <button class="stream-tab" onclick="switchStream('university', this)">🎓 &nbsp;University / College Programmes</button>
+    </div>
+
+    <!-- ── STREAM 1: CORPORATE + C-SUITE COMBINED ── -->
+    <div class="stream-panel active" id="stream-corporate">
+      <p class="stream-intro">Two tiers, one team. Sector-specific AI & Data Science training for mid-level managers and functional heads — combined with strategic AI leadership programmes for C-Suite and senior decision-makers. Same organisation, one cohesive training journey from the coderoom to the boardroom.</p>
+
+      <!-- Corporate sub-header -->
+      <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--oranje)">//&nbsp;Mid-Level & Functional Teams — Sector Programmes</div>
+        <div style="flex:1;height:1px;background:var(--oranje-dim)"></div>
+      </div>
+      <div class="courses-grid-3" style="margin-bottom:3.5rem">
+        <div class="course-card"><span class="tag-hot">🔥 High Demand</span><span class="course-icon">🏦</span><div class="course-title">Banking & Financial Services</div><div class="course-desc">Credit risk scoring, fraud detection, customer segmentation, and financial forecasting using ML. Teams learn to read model outputs and drive data-led decisions.</div><div class="course-modules"><span class="course-module-tag">Credit Risk</span><span class="course-module-tag">Fraud ML</span><span class="course-module-tag">Forecasting</span><span class="course-module-tag">Gen AI</span></div><div class="course-meta"><div class="course-meta-item"><strong>Half-day → 5-day</strong>Duration</div><div class="course-meta-item"><strong>On-site / Virtual</strong>Mode</div></div></div>
+        <div class="course-card"><span class="course-icon">🏥</span><div class="course-title">Healthcare & Pharma</div><div class="course-desc">Patient analytics, clinical data interpretation, operational efficiency modeling, and AI-assisted diagnostics strategy — for clinical and administrative leadership teams.</div><div class="course-modules"><span class="course-module-tag">Patient Analytics</span><span class="course-module-tag">Ops ML</span><span class="course-module-tag">AI Strategy</span></div><div class="course-meta"><div class="course-meta-item"><strong>Half-day → 5-day</strong>Duration</div><div class="course-meta-item"><strong>On-site / Virtual</strong>Mode</div></div></div>
+        <div class="course-card"><span class="course-icon">🛡️</span><div class="course-title">Insurance</div><div class="course-desc">Claims analytics, underwriting risk models, churn prediction, and AI for policy pricing. Hands-on with real insurance datasets and regulatory context.</div><div class="course-modules"><span class="course-module-tag">Claims AI</span><span class="course-module-tag">Churn Models</span><span class="course-module-tag">Risk Pricing</span></div><div class="course-meta"><div class="course-meta-item"><strong>Half-day → 5-day</strong>Duration</div><div class="course-meta-item"><strong>On-site / Virtual</strong>Mode</div></div></div>
+        <div class="course-card"><span class="course-icon">🛒</span><div class="course-title">FMCG & Retail</div><div class="course-desc">Demand forecasting, market basket analysis, customer lifetime value, and supply chain analytics. AI applications mapped directly to revenue and margin outcomes.</div><div class="course-modules"><span class="course-module-tag">Demand Forecast</span><span class="course-module-tag">CLV</span><span class="course-module-tag">Supply Chain AI</span></div><div class="course-meta"><div class="course-meta-item"><strong>Half-day → 5-day</strong>Duration</div><div class="course-meta-item"><strong>On-site / Virtual</strong>Mode</div></div></div>
+        <div class="course-card"><span class="course-icon">🏛️</span><div class="course-title">Government & Public Sector</div><div class="course-desc">Policy analytics, public finance modeling, dashboard strategy, and AI literacy for senior bureaucrats and policy decision-makers. Delivered as executive workshops.</div><div class="course-modules"><span class="course-module-tag">Policy Analytics</span><span class="course-module-tag">BI Dashboards</span><span class="course-module-tag">AI Fluency</span></div><div class="course-meta"><div class="course-meta-item"><strong>Half-day → 5-day</strong>Duration</div><div class="course-meta-item"><strong>On-site / Virtual</strong>Mode</div></div></div>
+        <div class="course-card"><span class="course-icon">📡</span><div class="course-title">Media, Tech & Telecom</div><div class="course-desc">Audience analytics, content recommendation systems, Gen AI for workflows, and network data intelligence — for teams driving digital transformation agendas.</div><div class="course-modules"><span class="course-module-tag">Gen AI</span><span class="course-module-tag">Audience AI</span><span class="course-module-tag">NLP</span><span class="course-module-tag">Automation</span></div><div class="course-meta"><div class="course-meta-item"><strong>Half-day → 5-day</strong>Duration</div><div class="course-meta-item"><strong>On-site / Virtual</strong>Mode</div></div></div>
+      </div>
+
+      <!-- C-Suite sub-header -->
+      <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--electric)">//&nbsp;C-Suite & Senior Leadership — Strategic AI Programmes</div>
+        <div style="flex:1;height:1px;background:var(--electric-dim)"></div>
+      </div>
+      <p class="stream-intro" style="border-left-color:var(--electric);margin-bottom:2rem">No coding. No jargon. Designed for senior decision-makers who need AI fluency — not AI engineering. Programmes help leaders make confident investment decisions, build adoption roadmaps, and understand exactly what AI can and cannot do for their organisation. Half-day to 2-day formats, on-site or virtual.</p>
+      <div class="courses-grid">
+        <div class="course-card"><span class="tag-hot">⭐ Flagship</span><span class="course-icon">🧭</span><div class="course-title">AI for Leaders — Strategic Fluency Programme</div><div class="course-desc">A high-impact session covering what Gen AI and ML actually do, where they create leverage in your business, how to evaluate AI vendors, and how to build an AI-ready culture — without a single line of code.</div><div class="course-modules"><span class="course-module-tag">Gen AI Strategy</span><span class="course-module-tag">AI ROI Frameworks</span><span class="course-module-tag">Change Management</span><span class="course-module-tag">Vendor Evaluation</span></div><div class="course-meta"><div class="course-meta-item"><strong>Half-day → 2-day</strong>Duration</div><div class="course-meta-item"><strong>C-Suite / Board</strong>Level</div><div class="course-meta-item"><strong>On-site / Virtual</strong>Mode</div></div></div>
+        <div class="course-card"><span class="course-icon">🗺️</span><div class="course-title">AI Adoption Roadmap Workshop</div><div class="course-desc">A working session that produces a concrete, prioritised AI adoption plan for your organisation. Covers quick wins, 12-month roadmap, build vs buy decisions, ethics & governance, and how to measure impact. Output: a board-ready AI strategy document.</div><div class="course-modules"><span class="course-module-tag">Roadmap Design</span><span class="course-module-tag">Build vs Buy</span><span class="course-module-tag">AI Governance</span><span class="course-module-tag">Impact KPIs</span></div><div class="course-meta"><div class="course-meta-item"><strong>1-day → 2-day</strong>Duration</div><div class="course-meta-item"><strong>Leadership Team</strong>Level</div><div class="course-meta-item"><strong>On-site preferred</strong>Mode</div></div></div>
+        <div class="course-card"><span class="course-icon">📈</span><div class="course-title">Executive Analytics for Decision-Makers</div><div class="course-desc">For senior leaders who need to interpret data outputs, challenge analytics teams, and make model-informed decisions. Covers dashboards, KPIs, regression outputs, and the right questions to ask when a data scientist presents to you.</div><div class="course-modules"><span class="course-module-tag">Data Interpretation</span><span class="course-module-tag">BI Dashboards</span><span class="course-module-tag">KPI Design</span><span class="course-module-tag">Model Literacy</span></div><div class="course-meta"><div class="course-meta-item"><strong>Half-day → 2-day</strong>Duration</div><div class="course-meta-item"><strong>Directors / VPs</strong>Level</div><div class="course-meta-item"><strong>On-site / Virtual</strong>Mode</div></div></div>
+        <div class="course-card"><span class="course-icon">🌊</span><div class="course-title">Strategic Innovation with AI</div><div class="course-desc">A leadership workshop exploring how AI-driven market intelligence can surface new growth opportunities, map competitive landscapes, and inform strategic planning — for leaders operating in fast-moving or data-blind industries.</div><div class="course-modules"><span class="course-module-tag">AI Market Intel</span><span class="course-module-tag">Competitive AI</span><span class="course-module-tag">Opportunity Mapping</span><span class="course-module-tag">Strategy Design</span></div><div class="course-meta"><div class="course-meta-item"><strong>1-day → 2-day</strong>Duration</div><div class="course-meta-item"><strong>Senior Leadership</strong>Level</div><div class="course-meta-item"><strong>On-site / Virtual</strong>Mode</div></div></div>
+      </div>
+    </div>
+
+    <!-- ── STREAM 2: UNIVERSITY ── -->
+    <div class="stream-panel" id="stream-university">
+      <p class="stream-intro">OranjeStride partners with colleges and universities to deliver structured, job-ready AI & Analytics programmes — delivered by practitioners, backed by a certificate jointly signed by OranjeStride and a university of repute in India.</p>
+      <div class="uni-tracks">
+        <div class="uni-track ug">
+          <span class="track-badge ug">Undergraduate Track</span>
+          <div class="track-title">Data Analytics for Undergraduates</div>
+          <div class="track-sub">BBA · B.Com · B.Sc · B.Tech · Any Stream</div>
+          <div class="track-points">
+            <div class="track-point">Excel (Basic to Advanced) — the universal business tool</div>
+            <div class="track-point">MySQL & database fundamentals for analysts</div>
+            <div class="track-point">Tableau & Power BI — building dashboards that matter</div>
+            <div class="track-point">Python fundamentals for data handling & visualisation</div>
+            <div class="track-point">Business Statistics — the foundation of every insight</div>
+            <div class="track-point">Capstone: live business case from your sector</div>
+          </div>
+          <div class="cert-badge">Certificate jointly signed by OranjeStride & a university of repute in India</div>
+        </div>
+        <div class="uni-track pg">
+          <span class="track-badge pg">Postgraduate / MBA Track</span>
+          <div class="track-title">Business Analytics & ML for Managers</div>
+          <div class="track-sub">MBA · M.Com · M.Sc · PGDM · Any PG Programme</div>
+          <div class="track-points">
+            <div class="track-point">Python for business analytics — pandas, numpy, seaborn</div>
+            <div class="track-point">Linear & logistic regression for finance and strategy decisions</div>
+            <div class="track-point">ML models — Random Forest, clustering, time-series forecasting</div>
+            <div class="track-point">Credit risk, churn, and revenue modeling using real datasets</div>
+            <div class="track-point">Tableau/Power BI for executive-ready reporting</div>
+            <div class="track-point">Capstone: sector-mapped ML project with interpretation focus</div>
+          </div>
+          <div class="cert-badge">Certificate jointly signed by OranjeStride & a university of repute in India</div>
+        </div>
+      </div>
+      <div class="courses-grid">
+        <div class="course-card"><span class="tag-hot">📊 Flagship</span><span class="course-icon">🐍</span><div class="course-title">Business Analytics with Python</div><div class="course-desc">The complete analytics stack — from data wrangling and EDA to regression, classification, clustering, and time-series forecasting. Built for MBA students and analytics professionals. Case studies drawn from finance, retail, and HR domains.</div><div class="course-modules"><span class="course-module-tag">pandas / numpy</span><span class="course-module-tag">Regression</span><span class="course-module-tag">Random Forest</span><span class="course-module-tag">K-Means</span><span class="course-module-tag">ARIMA</span><span class="course-module-tag">ROC-AUC</span></div><div class="course-meta"><div class="course-meta-item"><strong>Instructor-Led</strong>Format</div><div class="course-meta-item"><strong>PG / MBA</strong>Level</div><div class="course-meta-item"><strong>Blended</strong>Mode</div></div></div>
+        <div class="course-card"><span class="course-icon">🤖</span><div class="course-title">Generative AI & Agentic AI Bootcamp</div><div class="course-desc">LLMs, RAG architectures, prompt engineering, AI agents and autonomous workflows — for students ready to enter AI-first workplaces. Covers the full stack from foundation models to deployment and business application.</div><div class="course-modules"><span class="course-module-tag">LLMs</span><span class="course-module-tag">RAG</span><span class="course-module-tag">Agents</span><span class="course-module-tag">Prompt Eng.</span><span class="course-module-tag">MCP</span><span class="course-module-tag">Deployment</span></div><div class="course-meta"><div class="course-meta-item"><strong>Live + Hands-On</strong>Format</div><div class="course-meta-item"><strong>UG / PG</strong>Level</div><div class="course-meta-item"><strong>Online / Offline</strong>Mode</div></div></div>
+      </div>
+    </div>
+
+    <!-- University stream closes here -->
+    </div>
+
+  </div>
+</section>
+
+<section id="india-tour">
+  <div class="tour-glow"></div>
+  <div class="section-wrap">
+    <div class="section-label reveal">🌏 International Programme</div>
+    <h2 class="section-title reveal">India AI <span class="oranje">Learning Tour</span></h2>
+    <p style="color:var(--chalk-dim);font-size:0.95rem;line-height:1.7;max-width:620px;margin-bottom:0" class="reveal">Experience AI & Data Science education at its source. An immersive learning journey in India — combining world-class curriculum, hands-on labs, and the academic credibility of a co-signed certificate from a university of repute in India.</p>
+    <div class="tour-grid">
+      <div class="tour-features reveal">
+        <div class="tour-feature">
+          <span class="tf-icon">✈️</span>
+          <div><div class="tf-title">Come to India. Learn at the Source.</div><div class="tf-desc">International professionals travel to India for a structured, immersive AI & Data Science programme — delivered on a partner university campus or executive training facility in India.</div></div>
+        </div>
+        <div class="tour-feature">
+          <span class="tf-icon">🧠</span>
+          <div><div class="tf-title">Practitioner-Led Curriculum</div><div class="tf-desc">Every session is led by OranjeStride faculty — practitioners with live corporate experience across Accenture, EXL Services, and global financial institutions. No pre-recorded content. No generic slides.</div></div>
+        </div>
+        <div class="tour-feature">
+          <span class="tf-icon">🔬</span>
+          <div><div class="tf-title">Hands-On Labs & Real Projects</div><div class="tf-desc">Participants work on real datasets from their own sectors — banking, insurance, government, FMCG. They leave with working code, dashboards, and a project they can deploy immediately.</div></div>
+        </div>
+        <div class="tour-feature">
+          <span class="tf-icon">🤝</span>
+          <div><div class="tf-title">Cultural Immersion + Networking</div><div class="tf-desc">India is the world's AI talent engine. Beyond the classroom, participants connect with India's data science community — through campus visits, industry interfaces, and peer cohorts from across the globe.</div></div>
+        </div>
+        <div class="tour-feature">
+          <span class="tf-icon">📜</span>
+          <div><div class="tf-title">University-Backed Certificate</div><div class="tf-desc">Every participant receives a certificate jointly signed by OranjeStride Consultancy and a university of repute in India — carrying academic credibility recognised by employers internationally.</div></div>
+        </div>
+      </div>
+      <div class="tour-panel reveal reveal-delay-2">
+        <div class="tour-audience-title">// Who This Is For</div>
+        <div class="audience-pills">
+          <span class="audience-pill">🇳🇵 Nepal</span>
+          <span class="audience-pill">🌏 Southeast Asia</span>
+          <span class="audience-pill">🌍 East Africa</span>
+          <span class="audience-pill">🌐 Middle East</span>
+          <span class="audience-pill">Banking & Finance</span>
+          <span class="audience-pill">Government Officials</span>
+          <span class="audience-pill">Corporate Teams</span>
+          <span class="audience-pill">University Faculty</span>
+          <span class="audience-pill">Analytics Professionals</span>
+          <span class="audience-pill">Entrepreneurs</span>
+        </div>
+        <div class="tour-cert">
+          <div class="tour-cert-title">// Certificate</div>
+          <div class="tour-cert-text">Jointly awarded by <strong>OranjeStride Consultancy</strong> and a <strong>university of repute in India</strong> — co-signed, institution-stamped, and internationally credible.</div>
+        </div>
+        <div class="tour-audience-title" style="margin-bottom:0.8rem">// Programme Duration</div>
+        <div class="tour-durations">
+          <div class="dur-item"><span class="dur-val">2–3</span><span class="dur-lbl">Day Intensive</span></div>
+          <div class="dur-item"><span class="dur-val">1</span><span class="dur-lbl">Week Deep-Dive</span></div>
+          <div class="dur-item"><span class="dur-val">Custom</span><span class="dur-lbl">Group Cohorts</span></div>
+        </div>
+        <div style="margin-top:1.8rem">
+          <a href="#contact" class="btn-primary" style="display:inline-block;text-decoration:none">Enquire About the Tour →</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -492,7 +692,7 @@
     <div class="contact-grid" style="margin-top: 3.5rem;">
       <div class="contact-info reveal">
         <p style="color:var(--chalk-dim);font-size:0.95rem;line-height:1.75;margin-bottom:1rem;">Whether you're an institution designing a curriculum, a company upskilling teams, or a fund needing analytics depth — we'd love to hear from you.</p>
-        <div class="contact-detail"><div class="contact-icon">📧</div><div><div class="cd-label">Email</div><a href="mailto:contactus@oranjestride.com" class="cd-val">contactus@oranjestride.com</a></div></div>
+        <div class="contact-detail"><div class="contact-icon">📧</div><div><div class="cd-label">Email</div><a href="/cdn-cgi/l/email-protection#f6959998829795828385b6998497989c938582849f9293d895999b" class="cd-val"><span class="__cf_email__" data-cfemail="63000c0d170200171610230c11020d09061017110a07064d000c0e">[email&#160;protected]</span></a></div></div>
         <div class="contact-detail"><div class="contact-icon">📞</div><div><div class="cd-label">Phone</div><a href="tel:+919311790400" class="cd-val">+91 93117 90400</a></div></div>
         <div class="contact-detail"><div class="contact-icon">📍</div><div><div class="cd-label">Location</div><span class="cd-val">Safdarjung Enclave, New Delhi, India</span></div></div>
 
@@ -506,9 +706,17 @@
         <div class="form-group"><label class="form-label">Enquiry Type</label>
           <select class="form-select">
             <option value="">Select an option</option>
-            <option>Corporate AI / ML Training</option>
-            <option>Academic Programme Partnership</option>
-            <option>Executive Analytics Workshop</option>
+            <option>Corporate AI / ML Training — Banking & Finance</option>
+            <option>Corporate AI / ML Training — Healthcare & Pharma</option>
+            <option>Corporate AI / ML Training — Insurance</option>
+            <option>Corporate AI / ML Training — FMCG & Retail</option>
+            <option>Corporate AI / ML Training — Government & Public Sector</option>
+            <option>Corporate AI / ML Training — Media, Tech & Telecom</option>
+            <option>University Partnership — Undergraduate Programme</option>
+            <option>University Partnership — Postgraduate / MBA Programme</option>
+            <option>C-Suite & Leadership Workshop</option>
+            <option>Blue Ocean Strategy + AI Workshop</option>
+            <option>India AI Learning Tour</option>
             <option>Data & Analytics Consulting</option>
             <option>Quant / Fund Analytics</option>
             <option>Government Research Advisory</option>
@@ -601,6 +809,14 @@
     const t = setInterval(()=>{ c+=inc; if(c>=d.val){c=d.val;clearInterval(t);} el.textContent = d.dec?(c/10).toFixed(1):Math.floor(c); }, 18);
   }), 900);
 
+  // Stream tab switcher
+  function switchStream(id, btn) {
+    document.querySelectorAll('.stream-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.stream-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('stream-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+
   // Form — Formspree integration
   document.getElementById('submitBtn').addEventListener('click', async function() {
     const btn = this;
@@ -620,7 +836,7 @@
     }
     btn.textContent = 'Sending...'; btn.disabled = true; btn.style.opacity = '0.7';
     try {
-      const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      const res = await fetch('https://formspree.io/f/mjgaovpl', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({ name, organisation: org, email, enquiry_type: type, message })
