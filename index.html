@@ -357,7 +357,10 @@
     animation: ticker 36s linear infinite;
   }
 
-  .ticker span {
+  .ticker-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     padding: 1rem 1.6rem;
     white-space: nowrap;
     color: var(--navy);
@@ -367,10 +370,18 @@
     text-transform: uppercase;
   }
 
-  .ticker span::after {
+  .ticker-item::after {
     content: "/";
     margin-left: 1.6rem;
     color: var(--orange);
+  }
+
+  .ticker-item img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    border-radius: 3px;
+    flex-shrink: 0;
   }
 
   @keyframes ticker {
@@ -705,8 +716,9 @@
   }
 
   .avatar {
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 46px;
     height: 46px;
     border-radius: 50%;
@@ -718,6 +730,7 @@
     flex-shrink: 0;
     box-shadow: 0 4px 14px rgba(255, 106, 0, 0.35);
     border: 2px solid rgba(255, 255, 255, 0.6);
+    line-height: 1;
   }
 
   .author strong {
@@ -775,6 +788,16 @@
     background: var(--white);
     color: var(--muted);
     border-radius: 0 var(--radius) var(--radius) 0;
+  }
+
+  .stream-intro.full-width {
+    max-width: 100%;
+    border-left: none;
+    border-top: 3px solid var(--orange);
+    border-radius: var(--radius);
+    padding: 1.4rem 1.6rem;
+    background: var(--white);
+    box-shadow: 0 4px 16px rgba(16,36,55,0.06);
   }
 
   .subhead {
@@ -1884,8 +1907,8 @@
 
 <div class="ticker" aria-label="Client and partner ticker">
   <div class="ticker-track">
-    <span>IIM Visakhapatnam</span><span>IIM Sambalpur</span><span>Great Learning</span><span>EY</span><span>Hexaware</span><span>Havells</span><span>Colt Technology</span><span>NIIT</span><span>Imarticus</span><span>IMS Proschool</span><span>Christ University</span><span>ISBF</span><span>AJNIFM</span><span>Room to Read</span><span>Bennett &amp; Coleman</span><span>EduEdgePro</span>
-    <span>IIM Visakhapatnam</span><span>IIM Sambalpur</span><span>Great Learning</span><span>EY</span><span>Hexaware</span><span>Havells</span><span>Colt Technology</span><span>NIIT</span><span>Imarticus</span><span>IMS Proschool</span><span>Christ University</span><span>ISBF</span><span>AJNIFM</span><span>Room to Read</span><span>Bennett &amp; Coleman</span><span>EduEdgePro</span>
+    <span class="ticker-item"><img src="https://logo.clearbit.com/iimv.ac.in" alt="" onerror="this.style.display='none'">IIM Visakhapatnam</span><span class="ticker-item"><img src="https://logo.clearbit.com/iimsambalpur.ac.in" alt="" onerror="this.style.display='none'">IIM Sambalpur</span><span class="ticker-item"><img src="https://logo.clearbit.com/greatlearning.in" alt="" onerror="this.style.display='none'">Great Learning</span><span class="ticker-item"><img src="https://logo.clearbit.com/ey.com" alt="" onerror="this.style.display='none'">EY</span><span class="ticker-item"><img src="https://logo.clearbit.com/hexaware.com" alt="" onerror="this.style.display='none'">Hexaware</span><span class="ticker-item"><img src="https://logo.clearbit.com/havells.com" alt="" onerror="this.style.display='none'">Havells</span><span class="ticker-item"><img src="https://logo.clearbit.com/colt.net" alt="" onerror="this.style.display='none'">Colt Technology</span><span class="ticker-item"><img src="https://logo.clearbit.com/niit.com" alt="" onerror="this.style.display='none'">NIIT</span><span class="ticker-item"><img src="https://logo.clearbit.com/imarticus.org" alt="" onerror="this.style.display='none'">Imarticus</span><span class="ticker-item"><img src="https://logo.clearbit.com/imspro.com" alt="" onerror="this.style.display='none'">IMS Proschool</span><span class="ticker-item"><img src="https://logo.clearbit.com/christuniversity.in" alt="" onerror="this.style.display='none'">Christ University</span><span class="ticker-item"><img src="https://logo.clearbit.com/isbf.edu.in" alt="" onerror="this.style.display='none'">ISBF</span><span class="ticker-item"><img src="https://logo.clearbit.com/ajnifm.gov.in" alt="" onerror="this.style.display='none'">AJNIFM</span><span class="ticker-item"><img src="https://logo.clearbit.com/roomtoread.org" alt="" onerror="this.style.display='none'">Room to Read</span><span class="ticker-item"><img src="https://logo.clearbit.com/timesofindia.com" alt="" onerror="this.style.display='none'">Bennett &amp; Coleman</span><span class="ticker-item"><img src="https://logo.clearbit.com/eduedgepro.com" alt="" onerror="this.style.display='none'">EduEdgePro</span>
+    <span class="ticker-item"><img src="https://logo.clearbit.com/iimv.ac.in" alt="" onerror="this.style.display='none'">IIM Visakhapatnam</span><span class="ticker-item"><img src="https://logo.clearbit.com/iimsambalpur.ac.in" alt="" onerror="this.style.display='none'">IIM Sambalpur</span><span class="ticker-item"><img src="https://logo.clearbit.com/greatlearning.in" alt="" onerror="this.style.display='none'">Great Learning</span><span class="ticker-item"><img src="https://logo.clearbit.com/ey.com" alt="" onerror="this.style.display='none'">EY</span><span class="ticker-item"><img src="https://logo.clearbit.com/hexaware.com" alt="" onerror="this.style.display='none'">Hexaware</span><span class="ticker-item"><img src="https://logo.clearbit.com/havells.com" alt="" onerror="this.style.display='none'">Havells</span><span class="ticker-item"><img src="https://logo.clearbit.com/colt.net" alt="" onerror="this.style.display='none'">Colt Technology</span><span class="ticker-item"><img src="https://logo.clearbit.com/niit.com" alt="" onerror="this.style.display='none'">NIIT</span><span class="ticker-item"><img src="https://logo.clearbit.com/imarticus.org" alt="" onerror="this.style.display='none'">Imarticus</span><span class="ticker-item"><img src="https://logo.clearbit.com/imspro.com" alt="" onerror="this.style.display='none'">IMS Proschool</span><span class="ticker-item"><img src="https://logo.clearbit.com/christuniversity.in" alt="" onerror="this.style.display='none'">Christ University</span><span class="ticker-item"><img src="https://logo.clearbit.com/isbf.edu.in" alt="" onerror="this.style.display='none'">ISBF</span><span class="ticker-item"><img src="https://logo.clearbit.com/ajnifm.gov.in" alt="" onerror="this.style.display='none'">AJNIFM</span><span class="ticker-item"><img src="https://logo.clearbit.com/roomtoread.org" alt="" onerror="this.style.display='none'">Room to Read</span><span class="ticker-item"><img src="https://logo.clearbit.com/timesofindia.com" alt="" onerror="this.style.display='none'">Bennett &amp; Coleman</span><span class="ticker-item"><img src="https://logo.clearbit.com/eduedgepro.com" alt="" onerror="this.style.display='none'">EduEdgePro</span>
   </div>
 </div>
 
@@ -1985,9 +2008,9 @@
       </div>
     </div>
     <div class="testimonial-grid">
-      <article class="testimonial reveal"><div class="stars">★★★★★</div><p>When theoretical concepts go hand in hand with practical implementation, the mind forces itself to explore beyond the vanilla concepts. Exactly the experience I had.</p><div class="author"><span class="avatar">D</span><div><strong>Dilpreet</strong><span>Sopra Steria</span></div></div></article>
-      <article class="testimonial reveal"><div class="stars">★★★★★</div><p>One of the best teachers I have ever had. Your teaching style is so unique - you make difficult things easy to understand. I feel privileged to have been guided by you.</p><div class="author"><span class="avatar">A</span><div><strong>Ashish Aggarwal</strong><span>Shri Vishwakarma Skill University</span></div></div></article>
-      <article class="testimonial reveal"><div class="stars">★★★★★</div><p>A great hands-on introduction to ML. If you want to understand where ML applies in real life, start here. The R &amp; Python coverage is exceptional and immediately actionable.</p><div class="author"><span class="avatar">L</span><div><strong>Lakshay Guglani</strong><span>Maharaja Agrasen College of Engg.</span></div></div></article>
+      <article class="testimonial reveal"><div class="stars">★★★★★</div><p>When theoretical concepts go hand in hand with practical implementation, the mind forces itself to explore beyond the vanilla concepts. Exactly the experience I had.</p><div class="author"><div class="avatar">D</div><div><strong>Dilpreet</strong><span>Sopra Steria</span></div></div></article>
+      <article class="testimonial reveal"><div class="stars">★★★★★</div><p>One of the best teachers I have ever had. Your teaching style is so unique - you make difficult things easy to understand. I feel privileged to have been guided by you.</p><div class="author"><div class="avatar">A</div><div><strong>Ashish Aggarwal</strong><span>Shri Vishwakarma Skill University</span></div></div></article>
+      <article class="testimonial reveal"><div class="stars">★★★★★</div><p>A great hands-on introduction to ML. If you want to understand where ML applies in real life, start here. The R &amp; Python coverage is exceptional and immediately actionable.</p><div class="author"><div class="avatar">L</div><div><strong>Lakshay Guglani</strong><span>Maharaja Agrasen College of Engg.</span></div></div></article>
     </div>
   </div>
 </section>
@@ -2011,21 +2034,21 @@
       <p class="stream-intro">Your team doesn't need to become data scientists. They just need to know how to use data to make better calls. Our corporate training works across two levels — practical, sector-specific programmes for managers and functional teams, and strategic AI fluency sessions for the leaders making the big decisions. Whether it's the boardroom or the operations floor, we meet people where they are.</p>
       <div class="subhead"><span>For Managers &amp; Functional Teams — Sector-Specific Training</span></div>
       <div class="courses-grid three">
-        <article class="course-card"><span class="badge">High Demand</span><span class="course-kicker">BFSI</span><h3>Banking &amp; Financial Services</h3><p>Your teams are sitting on a goldmine of data and not fully using it. We change that — helping BFSI professionals move from instinct to insight, using ML for credit risk, fraud detection, customer segmentation, and forecasting. Practical tools, real datasets, immediate takeaways.</p><div class="tags"><span class="tag">Credit Risk</span><span class="tag">Fraud ML</span><span class="tag">Forecasting</span><span class="tag">Gen AI</span></div><div class="meta"><span><strong>Half-day to 5-day</strong>Duration</span><span><strong>On-site / Virtual</strong>Mode</span></div></article>
-        <article class="course-card"><span class="course-kicker">HLTH</span><h3>Healthcare &amp; Pharma</h3><p>Healthcare decisions are only as good as the data behind them. We help clinical and administrative teams make sense of patient data, spot inefficiencies early, and understand how AI is reshaping diagnostics and operations — without the technical overwhelm.</p><div class="tags"><span class="tag">Patient Analytics</span><span class="tag">Ops ML</span><span class="tag">AI Strategy</span></div><div class="meta"><span><strong>Half-day to 5-day</strong>Duration</span><span><strong>On-site / Virtual</strong>Mode</span></div></article>
-        <article class="course-card"><span class="course-kicker">INS</span><h3>Insurance</h3><p>From underwriting to claims, every part of insurance is touched by data. This programme gives your teams the skills to build smarter risk models, predict churn before it happens, and price policies with more confidence — hands-on, with real insurance scenarios throughout.</p><div class="tags"><span class="tag">Claims AI</span><span class="tag">Churn Models</span><span class="tag">Risk Pricing</span></div><div class="meta"><span><strong>Half-day to 5-day</strong>Duration</span><span><strong>On-site / Virtual</strong>Mode</span></div></article>
-        <article class="course-card"><span class="course-kicker">RTL</span><h3>FMCG &amp; Retail</h3><p>Shelf space is expensive. Getting demand forecasting wrong is more so. We help retail and FMCG teams apply AI to the decisions that directly affect margins — forecasting, customer lifetime value, supply chain optimisation, and basket analysis — tied to outcomes you can measure.</p><div class="tags"><span class="tag">Demand Forecast</span><span class="tag">CLV</span><span class="tag">Supply Chain AI</span></div><div class="meta"><span><strong>Half-day to 5-day</strong>Duration</span><span><strong>On-site / Virtual</strong>Mode</span></div></article>
-        <article class="course-card"><span class="course-kicker">GOV</span><h3>Government &amp; Public Sector</h3><p>Data-driven governance isn't just possible — it's overdue. We work with senior bureaucrats and policy teams to build practical AI literacy and dashboard capabilities, so decisions are backed by evidence, not just experience. Delivered as focused executive workshops — no fluff, just what's useful.</p><div class="tags"><span class="tag">Policy Analytics</span><span class="tag">BI Dashboards</span><span class="tag">AI Fluency</span></div><div class="meta"><span><strong>Half-day to 5-day</strong>Duration</span><span><strong>On-site / Virtual</strong>Mode</span></div></article>
-        <article class="course-card"><span class="course-kicker">TMT</span><h3>Media, Tech &amp; Telecom</h3><p>Audiences are fragmented, attention is scarce, and the teams winning are the ones using data to stay ahead. We help media, tech, and telecom teams harness AI for audience intelligence, content recommendation, and workflow automation — practical skills for the teams driving your digital agenda.</p><div class="tags"><span class="tag">Gen AI</span><span class="tag">Audience AI</span><span class="tag">NLP</span><span class="tag">Automation</span></div><div class="meta"><span><strong>Half-day to 5-day</strong>Duration</span><span><strong>On-site / Virtual</strong>Mode</span></div></article>
+        <article class="course-card"><span class="badge">High Demand</span><h3>Banking &amp; Financial Services</h3><p>Your teams are sitting on a goldmine of data and not fully using it. We change that — helping BFSI professionals move from instinct to insight, using ML for credit risk, fraud detection, customer segmentation, and forecasting. Practical tools, real datasets, immediate takeaways.</p><div class="tags"><span class="tag">Credit Risk</span><span class="tag">Fraud ML</span><span class="tag">Forecasting</span><span class="tag">Gen AI</span></div><div class="meta"><span><strong>Half-day to 5-day</strong>Duration</span><span><strong>On-site / Virtual</strong>Mode</span></div></article>
+        <article class="course-card"><h3>Healthcare &amp; Pharma</h3><p>Healthcare decisions are only as good as the data behind them. We help clinical and administrative teams make sense of patient data, spot inefficiencies early, and understand how AI is reshaping diagnostics and operations — without the technical overwhelm.</p><div class="tags"><span class="tag">Patient Analytics</span><span class="tag">Ops ML</span><span class="tag">AI Strategy</span></div><div class="meta"><span><strong>Half-day to 5-day</strong>Duration</span><span><strong>On-site / Virtual</strong>Mode</span></div></article>
+        <article class="course-card"><h3>Insurance</h3><p>From underwriting to claims, every part of insurance is touched by data. This programme gives your teams the skills to build smarter risk models, predict churn before it happens, and price policies with more confidence — hands-on, with real insurance scenarios throughout.</p><div class="tags"><span class="tag">Claims AI</span><span class="tag">Churn Models</span><span class="tag">Risk Pricing</span></div><div class="meta"><span><strong>Half-day to 5-day</strong>Duration</span><span><strong>On-site / Virtual</strong>Mode</span></div></article>
+        <article class="course-card"><h3>FMCG &amp; Retail</h3><p>Shelf space is expensive. Getting demand forecasting wrong is more so. We help retail and FMCG teams apply AI to the decisions that directly affect margins — forecasting, customer lifetime value, supply chain optimisation, and basket analysis — tied to outcomes you can measure.</p><div class="tags"><span class="tag">Demand Forecast</span><span class="tag">CLV</span><span class="tag">Supply Chain AI</span></div><div class="meta"><span><strong>Half-day to 5-day</strong>Duration</span><span><strong>On-site / Virtual</strong>Mode</span></div></article>
+        <article class="course-card"><h3>Government &amp; Public Sector</h3><p>Data-driven governance isn't just possible — it's overdue. We work with senior bureaucrats and policy teams to build practical AI literacy and dashboard capabilities, so decisions are backed by evidence, not just experience. Delivered as focused executive workshops — no fluff, just what's useful.</p><div class="tags"><span class="tag">Policy Analytics</span><span class="tag">BI Dashboards</span><span class="tag">AI Fluency</span></div><div class="meta"><span><strong>Half-day to 5-day</strong>Duration</span><span><strong>On-site / Virtual</strong>Mode</span></div></article>
+        <article class="course-card"><h3>Media, Tech &amp; Telecom</h3><p>Audiences are fragmented, attention is scarce, and the teams winning are the ones using data to stay ahead. We help media, tech, and telecom teams harness AI for audience intelligence, content recommendation, and workflow automation — practical skills for the teams driving your digital agenda.</p><div class="tags"><span class="tag">Gen AI</span><span class="tag">Audience AI</span><span class="tag">NLP</span><span class="tag">Automation</span></div><div class="meta"><span><strong>Half-day to 5-day</strong>Duration</span><span><strong>On-site / Virtual</strong>Mode</span></div></article>
       </div>
 
       <div class="subhead"><span>For C-Suite &amp; Senior Leaders — Strategic AI Programmes</span></div>
-      <p class="stream-intro">You don't need to understand how the model works. You need to understand what it can do for your organisation, what to invest in, and what questions to ask. These programmes are built for exactly that — no code, no jargon, just the clarity and confidence to lead AI transformation in your organisation. Delivered in half-day to 2-day formats, at your office or virtually.</p>
+      <p class="stream-intro full-width">You don't need to understand how the model works. You need to understand what it can do for your organisation, what to invest in, and what questions to ask. These programmes are built for exactly that — no code, no jargon, just the clarity and confidence to lead AI transformation in your organisation. Delivered in half-day to 2-day formats, at your office or virtually.</p>
       <div class="courses-grid">
-        <article class="course-card"><span class="badge">Flagship</span><span class="course-kicker">STR</span><h3>AI for Leaders — Strategic Fluency</h3><p>The most common mistake leaders make is either over-investing in AI hype or dismissing it too quickly. This programme gives you a clear-eyed view of what Generative AI and ML actually do, where they genuinely create leverage, how to evaluate vendors, and how to build a culture that makes AI stick — all without writing a single line of code.</p><div class="tags"><span class="tag">Gen AI Strategy</span><span class="tag">AI ROI</span><span class="tag">Change Management</span><span class="tag">Vendor Evaluation</span></div><div class="meta"><span><strong>Half-day to 2-day</strong>Duration</span><span><strong>C-Suite / Board</strong>Level</span><span><strong>On-site / Virtual</strong>Mode</span></div></article>
-        <article class="course-card"><span class="course-kicker">MAP</span><h3>AI Adoption Roadmap Workshop</h3><p>Rather than a theoretical overview, this is a working session. You leave with a concrete, prioritised AI adoption plan for your organisation — covering where to start, what to build vs. buy, how to handle governance and ethics, and how to track whether it's working. The output is a board-ready AI strategy document.</p><div class="tags"><span class="tag">Roadmap Design</span><span class="tag">Build vs Buy</span><span class="tag">AI Governance</span><span class="tag">Impact KPIs</span></div><div class="meta"><span><strong>1-day to 2-day</strong>Duration</span><span><strong>Leadership Team</strong>Level</span><span><strong>On-site preferred</strong>Mode</span></div></article>
-        <article class="course-card"><span class="course-kicker">EXA</span><h3>Executive Analytics for Decision-Makers</h3><p>When a data scientist presents findings to leadership, the leader who can ask the right questions has a real advantage. This programme gives directors and VPs the tools to interpret dashboards critically, challenge analytical assumptions, and make smarter calls when the data is pointing in a particular direction.</p><div class="tags"><span class="tag">Data Interpretation</span><span class="tag">BI Dashboards</span><span class="tag">KPI Design</span><span class="tag">Model Literacy</span></div><div class="meta"><span><strong>Half-day to 2-day</strong>Duration</span><span><strong>Directors / VPs</strong>Level</span><span><strong>On-site / Virtual</strong>Mode</span></div></article>
-        <article class="course-card"><span class="course-kicker">INN</span><h3>Strategic Innovation with AI</h3><p>The organisations growing fastest right now are using AI to see around corners — spotting market shifts before competitors, identifying white spaces, and making strategic bets earlier. This workshop helps senior leaders use AI-driven intelligence to inform the big moves, not just the operational ones.</p><div class="tags"><span class="tag">AI Market Intel</span><span class="tag">Competitive AI</span><span class="tag">Opportunity Mapping</span><span class="tag">Strategy Design</span></div><div class="meta"><span><strong>1-day to 2-day</strong>Duration</span><span><strong>Senior Leadership</strong>Level</span><span><strong>On-site / Virtual</strong>Mode</span></div></article>
+        <article class="course-card"><span class="badge">Flagship</span><h3>AI for Leaders — Strategic Fluency</h3><p>The most common mistake leaders make is either over-investing in AI hype or dismissing it too quickly. This programme gives you a clear-eyed view of what Generative AI and ML actually do, where they genuinely create leverage, how to evaluate vendors, and how to build a culture that makes AI stick — all without writing a single line of code.</p><div class="tags"><span class="tag">Gen AI Strategy</span><span class="tag">AI ROI</span><span class="tag">Change Management</span><span class="tag">Vendor Evaluation</span></div><div class="meta"><span><strong>Half-day to 2-day</strong>Duration</span><span><strong>C-Suite / Board</strong>Level</span><span><strong>On-site / Virtual</strong>Mode</span></div></article>
+        <article class="course-card"><h3>AI Adoption Roadmap Workshop</h3><p>Rather than a theoretical overview, this is a working session. You leave with a concrete, prioritised AI adoption plan for your organisation — covering where to start, what to build vs. buy, how to handle governance and ethics, and how to track whether it's working. The output is a board-ready AI strategy document.</p><div class="tags"><span class="tag">Roadmap Design</span><span class="tag">Build vs Buy</span><span class="tag">AI Governance</span><span class="tag">Impact KPIs</span></div><div class="meta"><span><strong>1-day to 2-day</strong>Duration</span><span><strong>Leadership Team</strong>Level</span><span><strong>On-site preferred</strong>Mode</span></div></article>
+        <article class="course-card"><h3>Executive Analytics for Decision-Makers</h3><p>When a data scientist presents findings to leadership, the leader who can ask the right questions has a real advantage. This programme gives directors and VPs the tools to interpret dashboards critically, challenge analytical assumptions, and make smarter calls when the data is pointing in a particular direction.</p><div class="tags"><span class="tag">Data Interpretation</span><span class="tag">BI Dashboards</span><span class="tag">KPI Design</span><span class="tag">Model Literacy</span></div><div class="meta"><span><strong>Half-day to 2-day</strong>Duration</span><span><strong>Directors / VPs</strong>Level</span><span><strong>On-site / Virtual</strong>Mode</span></div></article>
+        <article class="course-card"><h3>Strategic Innovation with AI</h3><p>The organisations growing fastest right now are using AI to see around corners — spotting market shifts before competitors, identifying white spaces, and making strategic bets earlier. This workshop helps senior leaders use AI-driven intelligence to inform the big moves, not just the operational ones.</p><div class="tags"><span class="tag">AI Market Intel</span><span class="tag">Competitive AI</span><span class="tag">Opportunity Mapping</span><span class="tag">Strategy Design</span></div><div class="meta"><span><strong>1-day to 2-day</strong>Duration</span><span><strong>Senior Leadership</strong>Level</span><span><strong>On-site / Virtual</strong>Mode</span></div></article>
       </div>
     </div>
 
@@ -2036,8 +2059,8 @@
         <article class="track-card"><span class="track-badge">Postgraduate / MBA Track</span><h3>Business Analytics &amp; ML for Managers</h3><p>MBA · M.Com · M.Sc · PGDM · Any PG Programme</p><ul><li>Python for business analytics — pandas, numpy, and seaborn in practice</li><li>Regression models for finance and strategy — going beyond gut feel</li><li>ML in action — Random Forest, clustering, and forecasting on real datasets</li><li>Credit risk, churn, and revenue modelling — industry problems, real data</li><li>Tableau &amp; Power BI — reporting that makes a case to the board</li><li>Capstone: a sector-mapped ML project you can walk into an interview with</li></ul><div class="certificate">Certificate jointly signed by OranjeStride &amp; a university of repute in India</div></article>
       </div>
       <div class="courses-grid">
-        <article class="course-card"><span class="badge">Flagship</span><span class="course-kicker">PY</span><h3>Business Analytics with Python</h3><p>This is the programme students wish existed when they first opened Python and had no idea what to do with it. We take you through the full analytics journey — wrangling messy data, building intuition through EDA, running regression and classification models, and forecasting. Every concept is tied to a real business scenario so it actually sticks.</p><div class="tags"><span class="tag">pandas / numpy</span><span class="tag">Regression</span><span class="tag">Random Forest</span><span class="tag">K-Means</span><span class="tag">ARIMA</span><span class="tag">ROC-AUC</span></div><div class="meta"><span><strong>Instructor-Led</strong>Format</span><span><strong>PG / MBA</strong>Level</span><span><strong>Blended</strong>Mode</span></div></article>
-        <article class="course-card"><span class="course-kicker">AI</span><h3>Generative AI &amp; Agentic AI Bootcamp</h3><p>The job market is changing faster than most curricula. This bootcamp gets students ready for AI-first workplaces — not by teaching theory, but by building things. From how LLMs work to building RAG pipelines, prompt engineering, and deploying AI agents, students leave knowing how to actually work with the tools shaping every industry right now.</p><div class="tags"><span class="tag">LLMs</span><span class="tag">RAG</span><span class="tag">Agents</span><span class="tag">Prompt Eng.</span><span class="tag">MCP</span><span class="tag">Deployment</span></div><div class="meta"><span><strong>Live + Hands-On</strong>Format</span><span><strong>UG / PG</strong>Level</span><span><strong>Online / Offline</strong>Mode</span></div></article>
+        <article class="course-card"><span class="badge">Flagship</span><h3>Business Analytics with Python</h3><p>This is the programme students wish existed when they first opened Python and had no idea what to do with it. We take you through the full analytics journey — wrangling messy data, building intuition through EDA, running regression and classification models, and forecasting. Every concept is tied to a real business scenario so it actually sticks.</p><div class="tags"><span class="tag">pandas / numpy</span><span class="tag">Regression</span><span class="tag">Random Forest</span><span class="tag">K-Means</span><span class="tag">ARIMA</span><span class="tag">ROC-AUC</span></div><div class="meta"><span><strong>Instructor-Led</strong>Format</span><span><strong>PG / MBA</strong>Level</span><span><strong>Blended</strong>Mode</span></div></article>
+        <article class="course-card"><h3>Generative AI &amp; Agentic AI Bootcamp</h3><p>The job market is changing faster than most curricula. This bootcamp gets students ready for AI-first workplaces — not by teaching theory, but by building things. From how LLMs work to building RAG pipelines, prompt engineering, and deploying AI agents, students leave knowing how to actually work with the tools shaping every industry right now.</p><div class="tags"><span class="tag">LLMs</span><span class="tag">RAG</span><span class="tag">Agents</span><span class="tag">Prompt Eng.</span><span class="tag">MCP</span><span class="tag">Deployment</span></div><div class="meta"><span><strong>Live + Hands-On</strong>Format</span><span><strong>UG / PG</strong>Level</span><span><strong>Online / Offline</strong>Mode</span></div></article>
       </div>
     </div>
   </div>
@@ -2110,9 +2133,24 @@
     </div>
     <div class="contact-layout">
       <div class="contact-card reveal">
-        <div class="contact-detail"><span class="token">EM</span><div><small>Email</small><a href="mailto:contactus@oranjestride.com">contactus@oranjestride.com</a></div></div>
-        <div class="contact-detail"><span class="token">PH</span><div><small>Phone</small><a href="tel:+919311790400">+91 93117 90400</a></div></div>
-        <div class="contact-detail"><span class="token">ND</span><div><small>Location</small><strong>Safdarjung Enclave, New Delhi, India</strong></div></div>
+        <div class="contact-detail">
+          <span class="token">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </span>
+          <div><small>Email</small><a href="mailto:contactus@oranjestride.com">contactus@oranjestride.com</a></div>
+        </div>
+        <div class="contact-detail">
+          <span class="token">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6.29 6.29l1.41-1.41a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </span>
+          <div><small>Phone</small><a href="tel:+919311790400">+91 93117 90400</a></div>
+        </div>
+        <div class="contact-detail">
+          <span class="token">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          </span>
+          <div><small>Location</small><strong>Safdarjung Enclave, New Delhi, India</strong></div>
+        </div>
       </div>
       <form class="form contact-card reveal" action="https://formspree.io/f/mjgaovpl" method="POST" onsubmit="return false;">
         <div class="form-row">
@@ -2184,10 +2222,10 @@
         </div>
       </div>
       <div class="ds-actions">
-        <a href="https://data-stride-sql-platform-black.vercel.app" target="_blank" rel="noopener" class="btn btn-primary" style="min-height:42px;font-size:0.8rem;">
+        <a href="https://data-stride.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary" style="min-height:42px;font-size:0.8rem;">
           Explore DataStride &nbsp;→
         </a>
-        <button class="ds-dismiss" onclick="closeDSPopup()" type="button">Maybe Later</button>
+<button class="ds-dismiss" onclick="closeDSPopup()" type="button">Maybe Later</button>
       </div>
     </div>
   </div>
