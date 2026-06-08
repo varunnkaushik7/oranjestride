@@ -501,8 +501,8 @@
   .token {
     display: grid;
     place-items: center;
-    width: 48px;
-    height: 48px;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
     color: var(--orange);
     background: var(--orange-soft);
@@ -510,6 +510,15 @@
     font-size: 0.78rem;
     font-weight: 900;
     letter-spacing: 0.06em;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .token img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
   }
 
   .principle h3,
@@ -2097,11 +2106,11 @@
     </div>
     <div class="tour-layout">
       <div class="tour-features reveal">
-        <article class="tour-feature"><span class="token">IN</span><div><h3>Come to India. Learn at the Source.</h3><p>International professionals travel to India for a structured, immersive AI &amp; Data Science programme - delivered on a partner university campus or executive training facility in India.</p></div></article>
-        <article class="tour-feature"><span class="token">AI</span><div><h3>Practitioner-Led Curriculum</h3><p>Every session is led by OranjeStride faculty - practitioners with live corporate experience across Accenture, EXL Services, and global financial institutions. No pre-recorded content. No generic slides.</p></div></article>
-        <article class="tour-feature"><span class="token">LAB</span><div><h3>Hands-On Labs &amp; Real Projects</h3><p>Participants work on real datasets from their own sectors - banking, insurance, government, FMCG. They leave with working code, dashboards, and a project they can deploy immediately.</p></div></article>
-        <article class="tour-feature"><span class="token">NET</span><div><h3>Cultural Immersion + Networking</h3><p>India is the world's AI talent engine. Beyond the classroom, participants connect with India's data science community - through campus visits, industry interfaces, and peer cohorts from across the globe.</p></div></article>
-        <article class="tour-feature"><span class="token">CERT</span><div><h3>University-Backed Certificate</h3><p>Every participant receives a certificate jointly signed by OranjeStride Consultancy and a university of repute in India - carrying academic credibility recognised by employers internationally.</p></div></article>
+        <article class="tour-feature"><span class="token"><img src="images/india_logo.jpg" alt="India"></span><div><h3>Come to India. Learn at the Source.</h3><p>International professionals travel to India for a structured, immersive AI &amp; Data Science programme - delivered on a partner university campus or executive training facility in India.</p></div></article>
+        <article class="tour-feature"><span class="token"><img src="images/AI.png" alt="AI"></span><div><h3>Practitioner-Led Curriculum</h3><p>Every session is led by OranjeStride faculty - practitioners with live corporate experience across Accenture, EXL Services, and global financial institutions. No pre-recorded content. No generic slides.</p></div></article>
+        <article class="tour-feature"><span class="token"><img src="images/real_projects.png" alt="Labs"></span><div><h3>Hands-On Labs &amp; Real Projects</h3><p>Participants work on real datasets from their own sectors - banking, insurance, government, FMCG. They leave with working code, dashboards, and a project they can deploy immediately.</p></div></article>
+        <article class="tour-feature"><span class="token"><img src="images/cultural_immersion.png" alt="Networking"></span><div><h3>Cultural Immersion + Networking</h3><p>India is the world's AI talent engine. Beyond the classroom, participants connect with India's data science community - through campus visits, industry interfaces, and peer cohorts from across the globe.</p></div></article>
+        <article class="tour-feature"><span class="token"><img src="images/university_certificate.png" alt="Certificate"></span><div><h3>University-Backed Certificate</h3><p>Every participant receives a certificate jointly signed by OranjeStride Consultancy and a university of repute in India - carrying academic credibility recognised by employers internationally.</p></div></article>
       </div>
       <aside class="tour-panel reveal">
         <div class="column-title">Who This Is For</div>
@@ -2123,9 +2132,9 @@
       <h2>Data &amp; Analytics <span>Consulting</span></h2>
       <p class="section-copy" style="margin-top:1rem">Beyond training, OranjeStride brings deep domain expertise to complex analytical problems - working with quant firms, sovereign funds, and government research bodies on high-stakes data challenges.</p>
       <div class="consulting-list" style="margin-top:1.5rem">
-        <article class="consulting-item"><span class="token">QR</span><div><h3>Quant Research &amp; Risk Analytics</h3><p>Statistical modeling, factor analysis, and risk scoring for quant funds and hedge fund strategies. Backtesting frameworks to portfolio analytics.</p></div></article>
-        <article class="consulting-item"><span class="token">FR</span><div><h3>Financial Forecasting &amp; Fraud Detection</h3><p>ML-based fraud detection systems, credit risk models, and financial forecasting pipelines built for enterprise deployment.</p></div></article>
-        <article class="consulting-item"><span class="token">PA</span><div><h3>Government &amp; Policy Research Analytics</h3><p>Advisory and hands-on delivery for government research mandates - analytics roadmaps, data governance frameworks, and policy impact modeling.</p></div></article>
+        <article class="consulting-item"><span class="token"><img src="images/research.png" alt="Quant Research"></span><div><h3>Quant Research &amp; Risk Analytics</h3><p>Statistical modeling, factor analysis, and risk scoring for quant funds and hedge fund strategies. Backtesting frameworks to portfolio analytics.</p></div></article>
+        <article class="consulting-item"><span class="token"><img src="images/financial.png" alt="Financial"></span><div><h3>Financial Forecasting &amp; Fraud Detection</h3><p>ML-based fraud detection systems, credit risk models, and financial forecasting pipelines built for enterprise deployment.</p></div></article>
+        <article class="consulting-item"><span class="token"><img src="images/government.png" alt="Government"></span><div><h3>Government &amp; Policy Research Analytics</h3><p>Advisory and hands-on delivery for government research mandates - analytics roadmaps, data governance frameworks, and policy impact modeling.</p></div></article>
       </div>
     </div>
     <aside class="data-panel reveal">
