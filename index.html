@@ -377,10 +377,13 @@
   }
 
   .ticker-item img {
-    width: 20px;
-    height: 20px;
+    width: 28px;
+    height: 28px;
     object-fit: contain;
-    border-radius: 3px;
+    border-radius: 4px;
+    border: 1px solid rgba(0,0,0,0.12);
+    padding: 2px;
+    background: #fff;
     flex-shrink: 0;
   }
 
@@ -668,6 +671,23 @@
     padding: 0.95rem 1rem;
     background: var(--white);
     border: 1px solid var(--line);
+  }
+
+  .client-item-logo {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    border-radius: 4px;
+    border: 1px solid rgba(0,0,0,0.12);
+    padding: 2px;
+    background: #fff;
+    flex-shrink: 0;
+  }
+
+  .client-item-left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
   }
 
   .client-item strong {
@@ -1831,7 +1851,7 @@
 <!-- Page Loader -->
 <div id="page-loader" aria-hidden="true">
   <div class="loader-logo-wrap">
-    <img src="cropped_logo.jpg" alt="">
+    <img src="images/cropped_logo.jpg" alt="">
     <div class="loader-wordmark"><span class="lw-oranje">Oranje</span><span class="lw-stride">Stride</span></div>
     <div class="loader-tagline">Stride into Decision Intelligence</div>
   </div>
@@ -1841,7 +1861,7 @@
 <div class="site-shell">
   <nav class="nav" aria-label="Primary navigation">
     <a href="#" class="brand" aria-label="OranjeStride home">
-      <span class="brand-mark"><img src="cropped_logo.jpg" alt="OranjeStride" loading="eager"></span>
+      <span class="brand-mark"><img src="images/cropped_logo.jpg" alt="OranjeStride" loading="eager"></span>
       <span class="brand-name"><strong><span class="w-oranje">Oranje</span><span class="w-stride">Stride</span></strong></span>
     </a>
     <div class="nav-links">
@@ -1894,7 +1914,7 @@
       </div>
     </div>
     <div class="hero-visual reveal">
-      <img src="no_background_logo.jpg" alt="OranjeStride — Stride into Decision Intelligence" loading="eager">
+      <img src="images/no_background_logo.jpg" alt="OranjeStride — Stride into Decision Intelligence" loading="eager">
     </div>
     <div class="hero-metrics" aria-label="OranjeStride highlights">
       <div class="hero-metric"><strong>1000+</strong><span>Professionals Trained</span></div>
@@ -1907,8 +1927,8 @@
 
 <div class="ticker" aria-label="Client and partner ticker">
   <div class="ticker-track">
-    <span class="ticker-item"><img src="https://logo.clearbit.com/iimv.ac.in" alt="" onerror="this.style.display='none'">IIM Visakhapatnam</span><span class="ticker-item"><img src="https://logo.clearbit.com/iimsambalpur.ac.in" alt="" onerror="this.style.display='none'">IIM Sambalpur</span><span class="ticker-item"><img src="https://logo.clearbit.com/greatlearning.in" alt="" onerror="this.style.display='none'">Great Learning</span><span class="ticker-item"><img src="https://logo.clearbit.com/ey.com" alt="" onerror="this.style.display='none'">EY</span><span class="ticker-item"><img src="https://logo.clearbit.com/hexaware.com" alt="" onerror="this.style.display='none'">Hexaware</span><span class="ticker-item"><img src="https://logo.clearbit.com/havells.com" alt="" onerror="this.style.display='none'">Havells</span><span class="ticker-item"><img src="https://logo.clearbit.com/colt.net" alt="" onerror="this.style.display='none'">Colt Technology</span><span class="ticker-item"><img src="https://logo.clearbit.com/niit.com" alt="" onerror="this.style.display='none'">NIIT</span><span class="ticker-item"><img src="https://logo.clearbit.com/imarticus.org" alt="" onerror="this.style.display='none'">Imarticus</span><span class="ticker-item"><img src="https://logo.clearbit.com/imspro.com" alt="" onerror="this.style.display='none'">IMS Proschool</span><span class="ticker-item"><img src="https://logo.clearbit.com/christuniversity.in" alt="" onerror="this.style.display='none'">Christ University</span><span class="ticker-item"><img src="https://logo.clearbit.com/isbf.edu.in" alt="" onerror="this.style.display='none'">ISBF</span><span class="ticker-item"><img src="https://logo.clearbit.com/ajnifm.gov.in" alt="" onerror="this.style.display='none'">AJNIFM</span><span class="ticker-item"><img src="https://logo.clearbit.com/roomtoread.org" alt="" onerror="this.style.display='none'">Room to Read</span><span class="ticker-item"><img src="https://logo.clearbit.com/timesofindia.com" alt="" onerror="this.style.display='none'">Bennett &amp; Coleman</span><span class="ticker-item"><img src="https://logo.clearbit.com/eduedgepro.com" alt="" onerror="this.style.display='none'">EduEdgePro</span>
-    <span class="ticker-item"><img src="https://logo.clearbit.com/iimv.ac.in" alt="" onerror="this.style.display='none'">IIM Visakhapatnam</span><span class="ticker-item"><img src="https://logo.clearbit.com/iimsambalpur.ac.in" alt="" onerror="this.style.display='none'">IIM Sambalpur</span><span class="ticker-item"><img src="https://logo.clearbit.com/greatlearning.in" alt="" onerror="this.style.display='none'">Great Learning</span><span class="ticker-item"><img src="https://logo.clearbit.com/ey.com" alt="" onerror="this.style.display='none'">EY</span><span class="ticker-item"><img src="https://logo.clearbit.com/hexaware.com" alt="" onerror="this.style.display='none'">Hexaware</span><span class="ticker-item"><img src="https://logo.clearbit.com/havells.com" alt="" onerror="this.style.display='none'">Havells</span><span class="ticker-item"><img src="https://logo.clearbit.com/colt.net" alt="" onerror="this.style.display='none'">Colt Technology</span><span class="ticker-item"><img src="https://logo.clearbit.com/niit.com" alt="" onerror="this.style.display='none'">NIIT</span><span class="ticker-item"><img src="https://logo.clearbit.com/imarticus.org" alt="" onerror="this.style.display='none'">Imarticus</span><span class="ticker-item"><img src="https://logo.clearbit.com/imspro.com" alt="" onerror="this.style.display='none'">IMS Proschool</span><span class="ticker-item"><img src="https://logo.clearbit.com/christuniversity.in" alt="" onerror="this.style.display='none'">Christ University</span><span class="ticker-item"><img src="https://logo.clearbit.com/isbf.edu.in" alt="" onerror="this.style.display='none'">ISBF</span><span class="ticker-item"><img src="https://logo.clearbit.com/ajnifm.gov.in" alt="" onerror="this.style.display='none'">AJNIFM</span><span class="ticker-item"><img src="https://logo.clearbit.com/roomtoread.org" alt="" onerror="this.style.display='none'">Room to Read</span><span class="ticker-item"><img src="https://logo.clearbit.com/timesofindia.com" alt="" onerror="this.style.display='none'">Bennett &amp; Coleman</span><span class="ticker-item"><img src="https://logo.clearbit.com/eduedgepro.com" alt="" onerror="this.style.display='none'">EduEdgePro</span>
+    <span class="ticker-item"><img src="images/IIM_visakhapatnam.png" alt="IIM Visakhapatnam">IIM Visakhapatnam</span><span class="ticker-item"><img src="images/IIM_sambalpur.svg" alt="IIM Sambalpur">IIM Sambalpur</span><span class="ticker-item"><img src="images/great_learning.png" alt="Great Learning">Great Learning</span><span class="ticker-item"><img src="images/Ey_logo.png" alt="EY">EY</span><span class="ticker-item"><img src="images/hexaware.png" alt="Hexaware">Hexaware</span><span class="ticker-item"><img src="images/havells.svg" alt="Havells">Havells</span><span class="ticker-item"><img src="images/colt.png" alt="Colt Technology">Colt Technology</span><span class="ticker-item"><img src="images/NIIT.png" alt="NIIT">NIIT</span><span class="ticker-item"><img src="images/imarticus.png" alt="Imarticus">Imarticus</span><span class="ticker-item"><img src="images/ims_proschool.jpg" alt="IMS Proschool">IMS Proschool</span><span class="ticker-item"><img src="images/christ_university.png" alt="Christ University">Christ University</span><span class="ticker-item"><img src="images/ISBF.jpeg" alt="ISBF">ISBF</span><span class="ticker-item"><img src="images/Ajnifm.jpeg" alt="AJNIFM">AJNIFM</span><span class="ticker-item"><img src="images/room_to_read.png" alt="Room to Read">Room to Read</span><span class="ticker-item"><img src="images/bennet&coleman.png" alt="Bennett &amp; Coleman">Bennett &amp; Coleman</span><span class="ticker-item"><img src="images/eduedgepro.png" alt="EduEdgePro">EduEdgePro</span>
+    <span class="ticker-item"><img src="images/IIM_visakhapatnam.png" alt="IIM Visakhapatnam">IIM Visakhapatnam</span><span class="ticker-item"><img src="images/IIM_sambalpur.svg" alt="IIM Sambalpur">IIM Sambalpur</span><span class="ticker-item"><img src="images/great_learning.png" alt="Great Learning">Great Learning</span><span class="ticker-item"><img src="images/Ey_logo.png" alt="EY">EY</span><span class="ticker-item"><img src="images/hexaware.png" alt="Hexaware">Hexaware</span><span class="ticker-item"><img src="images/havells.svg" alt="Havells">Havells</span><span class="ticker-item"><img src="images/colt.png" alt="Colt Technology">Colt Technology</span><span class="ticker-item"><img src="images/NIIT.png" alt="NIIT">NIIT</span><span class="ticker-item"><img src="images/imarticus.png" alt="Imarticus">Imarticus</span><span class="ticker-item"><img src="images/ims_proschool.jpg" alt="IMS Proschool">IMS Proschool</span><span class="ticker-item"><img src="images/christ_university.png" alt="Christ University">Christ University</span><span class="ticker-item"><img src="images/ISBF.jpeg" alt="ISBF">ISBF</span><span class="ticker-item"><img src="images/Ajnifm.jpeg" alt="AJNIFM">AJNIFM</span><span class="ticker-item"><img src="images/room_to_read.png" alt="Room to Read">Room to Read</span><span class="ticker-item"><img src="images/bennet&coleman.png" alt="Bennett &amp; Coleman">Bennett &amp; Coleman</span><span class="ticker-item"><img src="images/eduedgepro.png" alt="EduEdgePro">EduEdgePro</span>
   </div>
 </div>
 
@@ -1923,7 +1943,7 @@
       <div class="hero-actions"><a href="#courses" class="btn btn-primary">View Our Programmes</a></div>
     </div>
     <div class="brand-panel reveal">
-      <img src="no_background_logo.jpg" alt="OranjeStride logo" loading="lazy" decoding="async">
+      <img src="images/no_background_logo.jpg" alt="OranjeStride logo" loading="lazy" decoding="async">
       <div class="principles">
         <div class="principle"><span class="token">01</span><div><h3>Relevance With Industry</h3><p>Curriculum crafted by practitioners mapped to real job roles in AI, Data Engineering, and Analytics.</p></div></div>
         <div class="principle"><span class="token">02</span><div><h3>Expert Experienced Faculty</h3><p>Dedicated data scientists and educators with hundreds of hours of live training delivery across elite institutions.</p></div></div>
@@ -1977,23 +1997,23 @@
     <div class="clients-grid">
       <div class="client-column reveal">
         <div class="column-title">Academic &amp; Training Partners</div>
-        <div class="client-item"><strong>IIM Visakhapatnam</strong><span>Management School</span></div>
-        <div class="client-item"><strong>IIM Sambalpur</strong><span>Management School</span></div>
-        <div class="client-item"><strong>Christ University</strong><span>University</span></div>
-        <div class="client-item"><strong>ISBF</strong><span>Business School</span></div>
-        <div class="client-item"><strong>Great Learning</strong><span>Ed-Tech Platform</span></div>
-        <div class="client-item"><strong>NIIT · Imarticus · IMS Proschool</strong><span>Training Institutes</span></div>
-        <div class="client-item"><strong>EduEdgePro</strong><span>Ed-Tech Platform</span></div>
+        <div class="client-item"><div class="client-item-left"><img class="client-item-logo" src="images/IIM_visakhapatnam.png" alt="IIM Visakhapatnam"><strong>IIM Visakhapatnam</strong></div><span>Management School</span></div>
+        <div class="client-item"><div class="client-item-left"><img class="client-item-logo" src="images/IIM_sambalpur.svg" alt="IIM Sambalpur"><strong>IIM Sambalpur</strong></div><span>Management School</span></div>
+        <div class="client-item"><div class="client-item-left"><img class="client-item-logo" src="images/christ_university.png" alt="Christ University"><strong>Christ University</strong></div><span>University</span></div>
+        <div class="client-item"><div class="client-item-left"><img class="client-item-logo" src="images/ISBF.jpeg" alt="ISBF"><strong>ISBF</strong></div><span>Business School</span></div>
+        <div class="client-item"><div class="client-item-left"><img class="client-item-logo" src="images/great_learning.png" alt="Great Learning"><strong>Great Learning</strong></div><span>Ed-Tech Platform</span></div>
+        <div class="client-item"><div class="client-item-left"><img class="client-item-logo" src="images/NIIT.png" alt="NIIT"><strong>NIIT · Imarticus · IMS Proschool</strong></div><span>Training Institutes</span></div>
+        <div class="client-item"><div class="client-item-left"><img class="client-item-logo" src="images/eduedgepro.png" alt="EduEdgePro"><strong>EduEdgePro</strong></div><span>Ed-Tech Platform</span></div>
       </div>
       <div class="client-column reveal">
         <div class="column-title">Corporate &amp; Government Engagements</div>
-        <div class="client-item"><strong>EY (Ernst &amp; Young)</strong><span>Big 4 Consulting</span></div>
-        <div class="client-item"><strong>Hexaware Technologies</strong><span>IT Enterprise</span></div>
-        <div class="client-item"><strong>Havells India</strong><span>Manufacturing Conglomerate</span></div>
-        <div class="client-item"><strong>Colt Technology</strong><span>Telecom</span></div>
-        <div class="client-item"><strong>Room to Read</strong><span>NGO / Social Sector</span></div>
-        <div class="client-item"><strong>Bennett &amp; Coleman</strong><span>Media Group</span></div>
-        <div class="client-item"><strong>AJNIFM (Govt. of India)</strong><span>Government Ministry</span></div>
+        <div class="client-item"><div class="client-item-left"><img class="client-item-logo" src="images/Ey_logo.png" alt="EY"><strong>EY (Ernst &amp; Young)</strong></div><span>Big 4 Consulting</span></div>
+        <div class="client-item"><div class="client-item-left"><img class="client-item-logo" src="images/hexaware.png" alt="Hexaware"><strong>Hexaware Technologies</strong></div><span>IT Enterprise</span></div>
+        <div class="client-item"><div class="client-item-left"><img class="client-item-logo" src="images/havells.svg" alt="Havells"><strong>Havells India</strong></div><span>Manufacturing Conglomerate</span></div>
+        <div class="client-item"><div class="client-item-left"><img class="client-item-logo" src="images/colt.png" alt="Colt Technology"><strong>Colt Technology</strong></div><span>Telecom</span></div>
+        <div class="client-item"><div class="client-item-left"><img class="client-item-logo" src="images/room_to_read.png" alt="Room to Read"><strong>Room to Read</strong></div><span>NGO / Social Sector</span></div>
+        <div class="client-item"><div class="client-item-left"><img class="client-item-logo" src="images/bennet&coleman.png" alt="Bennett &amp; Coleman"><strong>Bennett &amp; Coleman</strong></div><span>Media Group</span></div>
+        <div class="client-item"><div class="client-item-left"><img class="client-item-logo" src="images/Ajnifm.jpeg" alt="AJNIFM"><strong>AJNIFM (Govt. of India)</strong></div><span>Government Ministry</span></div>
       </div>
     </div>
   </div>
@@ -2233,7 +2253,7 @@
 
 <footer>
   <div style="display:flex;align-items:center;gap:0.9rem;">
-    <img src="no_background_logo.jpg" alt="OranjeStride" loading="lazy" decoding="async" style="width:40px;height:40px;object-fit:contain;border-radius:50%;background:#fff;padding:3px;">
+    <img src="images/no_background_logo.jpg" alt="OranjeStride" loading="lazy" decoding="async" style="width:40px;height:40px;object-fit:contain;border-radius:50%;background:#fff;padding:3px;">
     <div><strong>OranjeStride Consultancy Pvt. Ltd.</strong><span style="color:var(--orange);">Stride into Decision Intelligence</span></div>
   </div>
   <div><span>©2025 OranjeStride Consultancy Pvt. Ltd.<br>Safdarjung Enclave, New Delhi</span></div>
